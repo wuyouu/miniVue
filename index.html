@@ -7,13 +7,21 @@
 </head>
 <body>
   <div id="app"></div>
+  <!-- 按需引入各个模块 -->
+  <script src="./js/Observer.js"></script>
   <script src="./js/Vue.js"></script>
+
   <script>
     const vm = new Vue({
       el: '#app',
       data: {
         msg1: '内容1',
-        msg2: '内容2'
+        msg2: '内容2',
+        list: [1, 2, 3],
+        obj: {
+          attr1: '值1',
+          attr2: '值2'
+        }
       }
     })
     console.log(vm)

@@ -10,6 +10,9 @@ class Vue {
 
     // 2. 将 data 的属性转换为 Getter、Setter 并注入到 Vue 实例中
     _proxyData(this, this.$data)
+    
+    // *3. 调用 Observer，监听数据变化
+    new Observer(this.$data)
   }
 }
 
