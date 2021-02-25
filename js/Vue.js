@@ -13,6 +13,9 @@ class Vue {
     
     // *3. 调用 Observer，监听数据变化
     new Observer(this.$data)
+
+    // *4. 调用 Compiler，进行模板编译
+    new Compiler(this).compile(this.$el)
   }
 }
 

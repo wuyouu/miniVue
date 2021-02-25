@@ -39,7 +39,7 @@ function defineReactive (data, key, value) {
       // 检测新旧值是否相同
       if (newValue === value) return
       // 如果不相同，则赋值
-      data[key] = value
+      value = newValue
       // 检测新值是否为对象，并进行相应处理（与前面的操作相同，封装）
       observer(newValue)
       // * 引入 Dep，通知订阅者

@@ -6,8 +6,16 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+    {{ msg1 }}
+    {{ msg2 }}
+    <p>{{ msg1 }}</p>
+    <p>{{ msg2 }}</p>
+  </div>
   <!-- 按需引入各个模块 -->
+  <script src="./js/Dep.js"></script>
+  <script src="./js/Watcher.js"></script>
+  <script src="./js/Compiler.js"></script>
   <script src="./js/Observer.js"></script>
   <script src="./js/Vue.js"></script>
 
@@ -24,7 +32,6 @@
         }
       }
     })
-    console.log(vm)
   </script>
 </body>
 </html>
