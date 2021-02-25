@@ -31,6 +31,8 @@ function defineReactive (data, key, value) {
     configurable: true,
     get () {
       console.log('访问了属性')
+      // * 在触发 Getter 同时 Dep.target 为 Watcher 实例时添加订阅者
+      Dep.target && dep.addSub(Dep.target)
       return value
     },
     set (newValue) {
