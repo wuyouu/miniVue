@@ -11,6 +11,8 @@
     {{ msg2 }}
     <p>{{ msg1 }}</p>
     <p>{{ msg2 }}</p>
+    <p v-text="msg1">默认内容</p>
+    <input type="text" v-model="msg2">
   </div>
   <!-- 按需引入各个模块 -->
   <script src="./js/Dep.js"></script>
