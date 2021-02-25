@@ -18,6 +18,9 @@ class Observer {
 
 // 定义私有函数用于对当前 属性值 进行数据劫持
 function defineReactive (data, key, value) {
+  // * 引入 Dep 并创建实例
+  const dep = new Dep()
+
   // 检测当前属性值，如果为对象，则创建新的 Observer 实例处理
   // if (typeof value === 'object' && value !== null) { return new Observer(value) }
   observer(value)
@@ -37,7 +40,8 @@ function defineReactive (data, key, value) {
       data[key] = value
       // 检测新值是否为对象，并进行相应处理（与前面的操作相同，封装）
       observer(newValue)
-      console.log('设置了属性')
+      // * 引入 Dep，通知订阅者
+      dep.notify()
     }
   })
 }
