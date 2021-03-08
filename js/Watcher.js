@@ -18,6 +18,7 @@ class Watcher {
     const newValue = this.vm[this.key]
     // 如果数据不变，无需更新
     if (newValue === this.oldValue) return
+    console.log('更新了');
     // 调用更新后的回调
     this.cb(newValue)
   }

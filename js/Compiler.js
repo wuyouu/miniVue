@@ -42,7 +42,6 @@ class Compiler {
     let result
     while (result = reg.exec(value)) {
       index = result.index
-      console.log(index, lastIndex, 'index-lastIndex');
       if (index > lastIndex) {
         // 说明当前内容在以保存内容右侧，需要存储当前内容到上次记录位置直接得内容（普通文本）
         tokens.push(value.slice(lastIndex, index))
@@ -65,7 +64,9 @@ class Compiler {
       })
     }
     // 所有数据处理完毕，将内容拼接，并设置给元素
-    node.textContent = tokens.join('')
+    if (tokens.length) {
+      node.textContent = tokens.join('')
+    }
   }
   // 封装元素节点处理方法
   compileElement (node) {
